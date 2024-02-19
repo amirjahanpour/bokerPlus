@@ -7,19 +7,19 @@
                 <div class="col-12">
                     <div class="title-heading text-center">
                         <h4 class="heading fw-bold text-white title-dark mb-3">
-                            محبوب ترین روش خرید در دنیا, <br> نگه
-                            دارید ، و از رمزنگاری استفاده کنید
+                            جلوتر از همه، با بروکر پلاس
+                            <br>
                         </h4>
                         <h5 class="para-desc mx-auto text-light title-dark">
-                            خودکار دقیق کارآمد.
+                            با مجموعه بروکر پلاس درآمد دلاری داشته باشید و از نظر اقتصادی یک گام جلوتر از بقیه باشید. ما در این مسیر تا رسیدن شما به درآمد دلاری در کنارتان خواهیم ماند.
                         </h5>
                         <div class="subcribe-form mt-4 pt-2">
                             <form>
                                 <label for="email"></label>
-                                <input type="email" id="email" name="email" class="border bg-white rounded-pill"
-                                       required placeholder="آدرس ایمیل">
+                                <input type="text" id="email" name="email" class="border bg-white rounded-pill"
+                                       required placeholder="شماره همراه یا آیدی تلگرام">
                                 <button type="submit" class="btn btn-pills btn-primary">
-                                    شروع کنید
+                                    عضویت در کانال VIP
                                 </button>
                             </form>
                         </div>
@@ -33,8 +33,8 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="section-title text-center mb-4 pb-2">
-                        <h4 class="title mb-4">فراتر از اعداد و نمودارها</h4>
-                        <h5 class="text-muted para-desc mx-auto mb-0">راه حل های سازمانی برای تجارت مدرن بلاکچین</h5>
+                        <h4 class="title mb-4">مزایای کانال سیگنال فارکس پلاس</h4>
+                        <h5 class="text-muted para-desc mx-auto mb-0">استفاده رایگان از کانال سیگنال</h5>
                     </div>
                 </div>
             </div>
@@ -43,14 +43,13 @@
                     <div
                         class="card border-0 features feature-clean course-feature p-4 overflow-hidden shadow text-center">
                         <div class="icons text-primary text-center mx-auto">
-                            <i class="uil uil-file-contract-dollar d-block rounded h3 mb-0"></i>
+                            <i class="uil uil-game-structure d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark">پیگیری و همگام سازی خودکار</a>
-                            <p class="text-muted mt-2">ساخته شده به زبان شبه لاتین که کم و بیش مطابقت دارد.</p>
-                            <a href="javascript:void(0)" class="text-primary read-more">ادامه مطلب <i
-                                    class="uil uil-angle-left-b"></i></a>
-                            <i class="uil uil-file-contract-dollar text-primary full-img"></i>
+                            <a href="javascript:void(0)" class="title h5 text-dark">تیم تحلیل قدرتمند</a>
+                            <p class="text-muted mt-2">تیم تخصصی تحلیل که از بین بهترین تریدرهای ایران برگزیده شده‌اند.</p>
+                            <a href="javascript:void(0)" class="text-primary read-more"></a>
+                            <i class="uil uil-game-structure text-primary full-img"></i>
                         </div>
                     </div>
                 </div>
@@ -58,14 +57,13 @@
                     <div
                         class="card border-0 features feature-clean course-feature p-4 overflow-hidden shadow text-center">
                         <div class="icons text-primary text-center mx-auto">
-                            <i class="uil uil-analytics d-block rounded h3 mb-0"></i>
+                            <i class="uil uil-focus-target d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark">ابزارهای مالی CPA</a>
-                            <p class="text-muted mt-2">ساخته شده به زبان شبه لاتین که کم و بیش مطابقت دارد.</p>
-                            <a href="javascript:void(0)" class="text-primary read-more">ادامه مطلب <i
-                                    class="uil uil-angle-left-b"></i></a>
-                            <i class="uil uil-analytics text-primary full-img"></i>
+                            <a href="javascript:void(0)" class="title h5 text-dark">ارائه سیگنال واقعی</a>
+                            <p class="text-muted mt-2">سیگنال‌ها همگی دارای حد سود و ضرر مشخص هستند و برآیند واقعی دارند.</p>
+                            <a href="javascript:void(0)" class="text-primary read-more"></a>
+                            <i class="uil uil-focus-target text-primary full-img"></i>
                         </div>
                     </div>
                 </div>
@@ -73,14 +71,15 @@
                     <div
                         class="card border-0 features feature-clean course-feature p-4 overflow-hidden shadow text-center">
                         <div class="icons text-primary text-center mx-auto">
-                            <i class="uil uil-dashboard d-block rounded h3 mb-0"></i>
+                            <i class="uil uil-chart-bar d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark">داشبورد در زمان واقعی</a>
-                            <p class="text-muted mt-2">ساخته شده به زبان شبه لاتین که کم و بیش مطابقت دارد.</p>
-                            <a href="javascript:void(0)" class="text-primary read-more">ادامه مطلب <i
-                                    class="uil uil-angle-left-b"></i></a>
-                            <i class="uil uil-dashboard text-primary full-img"></i>
+                            <a href="javascript:void(0)" class="title h5 text-dark">بازدهی بالا</a>
+                            <p class="text-muted mt-2">
+                                ریسک به ریوارد تمام سیگنال‌ها بالای ۱:۲ هستند که باعث بازدهی بالا معاملات می‌شود.
+                            </p>
+                            <a href="javascript:void(0)" class="text-primary read-more"></a>
+                            <i class="uil uil-chart-bar text-primary full-img"></i>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -89,14 +88,13 @@
                     <div
                         class="card border-0 features feature-clean course-feature p-4 overflow-hidden shadow text-center">
                         <div class="icons text-primary text-center mx-auto">
-                            <i class="uil uil-swatchbook d-block rounded h3 mb-0"></i>
+                            <i class="uil uil-moneybag-alt d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark">دفترداری</a>
-                            <p class="text-muted mt-2">ساخته شده به زبان شبه لاتین که کم و بیش مطابقت دارد.</p>
-                            <a href="javascript:void(0)" class="text-primary read-more">ادامه مطلب <i
-                                    class="uil uil-angle-left-b"></i></a>
-                            <i class="uil uil-swatchbook text-primary full-img"></i>
+                            <a href="javascript:void(0)" class="title h5 text-dark">بدون نیاز به پرداخت هزینه</a>
+                            <p class="text-muted mt-2">این کانال کاملا رایگان است و نیازی به پرداخت اشتراک ماهیانه نیست.</p>
+                            <a href="javascript:void(0)" class="text-primary read-more"></a>
+                            <i class="uil uil-moneybag-alt text-primary full-img"></i>
                         </div>
                     </div>
                 </div>
@@ -107,10 +105,11 @@
                             <i class="uil uil-exchange d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark">کنترل معامله </a>
-                            <p class="text-muted mt-2">ساخته شده به زبان شبه لاتین که کم و بیش مطابقت دارد.</p>
-                            <a href="javascript:void(0)" class="text-primary read-more">ادامه مطلب <i
-                                    class="uil uil-angle-left-b"></i></a>
+                            <a href="javascript:void(0)" class="title h5 text-dark">ایده‌های معاملاتی</a>
+                            <p class="text-muted mt-2">
+                                در کانال سیگنال به ایده‌ها و تحلیل‌های بزرگترین تریدرهای جهان دسترسی خواهید داشت.
+                            </p>
+                            <a href="javascript:void(0)" class="text-primary read-more"></a>
                             <i class="uil uil-exchange text-primary full-img"></i>
                         </div>
                     </div>
@@ -119,14 +118,15 @@
                     <div
                         class="card border-0 features feature-clean course-feature p-4 overflow-hidden shadow text-center">
                         <div class="icons text-primary text-center mx-auto">
-                            <i class="uil uil-lock-alt d-block rounded h3 mb-0"></i>
+                            <i class="uil uil-comment-alt-message d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark"> امنیت و حریم خصوصی </a>
-                            <p class="text-muted mt-2">ساخته شده به زبان شبه لاتین که کم و بیش مطابقت دارد.</p>
-                            <a href="javascript:void(0)" class="text-primary read-more">ادامه مطلب <i
-                                    class="uil uil-angle-left-b"></i></a>
-                            <i class="uil uil-lock-alt text-primary full-img"></i>
+                            <a href="javascript:void(0)" class="title h5 text-dark">ارائه گزارش هفتگی</a>
+                            <p class="text-muted mt-2">
+                                در پایان هر هفته، نتیجه و عملکرد سیگنال‌های هفته گذشته به صورت شفاف ارائه خواهد شد.
+                            </p>
+                            <a href="javascript:void(0)" class="text-primary read-more"></a>
+                            <i class="uil uil-comment-alt-message text-primary full-img"></i>
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
         <div class="container mt-100 mt-60">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
-                    <img src="{{asset('asset/images/crypto/lapy01.png')}}" class="img-fluid" alt="">
+                    <img src="{{asset('asset/images/index/forex_laptop.png')}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                     <div class="section-title ms-lg-5">
