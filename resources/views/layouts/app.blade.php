@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>لندریک - قالب چندمنظوره ای مدرن html</title>
+    <title>بروکر پلاس</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Premium Bootstrap 5 Landing Page Template"/>
     <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern"/>
@@ -11,7 +11,7 @@
     <meta name="website" content="https://www.rtl-theme.com/author/tn_plugin/"/>
     <meta name="Version" content="v3.2.1"/>
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{asset('asset/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}">
     <!-- Bootstrap -->
     <link href="{{asset('asset/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Icons -->
@@ -29,8 +29,8 @@
         <!-- Logo container-->
         <div>
             <a class="logo" href="index.html">
-                <img src="{{asset('asset/images/logo-dark.png')}}" class="l-dark" height="24" alt="">
-                <img src="{{asset('asset/images/logo-light.png')}}" class="l-light" height="24" alt="">
+                <img src="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}" class="l-dark" height="80" alt="">
+                <img src="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}" class="l-light" height="100" alt="">
             </a>
         </div>
         <ul class="buy-button list-inline mb-0">

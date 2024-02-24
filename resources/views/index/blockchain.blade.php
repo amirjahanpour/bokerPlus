@@ -33,8 +33,8 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="section-title text-center mb-4 pb-2">
-                        <h4 class="title mb-4">مزایای کانال سیگنال فارکس پلاس</h4>
-                        <h5 class="text-muted para-desc mx-auto mb-0">استفاده رایگان از کانال سیگنال</h5>
+                        <h4 class="title mb-4">مزایای کانال سیگنال بروکر پلاس</h4>
+                        <h5 class="text-muted para-desc mx-auto mb-0">بدون نیاز به پرداخت هزینه</h5>
                     </div>
                 </div>
             </div>
@@ -88,13 +88,13 @@
                     <div
                         class="card border-0 features feature-clean course-feature p-4 overflow-hidden shadow text-center">
                         <div class="icons text-primary text-center mx-auto">
-                            <i class="uil uil-moneybag-alt d-block rounded h3 mb-0"></i>
+                            <i class="uil uil-phone-volume d-block rounded h3 mb-0"></i>
                         </div>
                         <div class="card-body p-0 mt-4">
-                            <a href="javascript:void(0)" class="title h5 text-dark">بدون نیاز به پرداخت هزینه</a>
-                            <p class="text-muted mt-2">این کانال کاملا رایگان است و نیازی به پرداخت اشتراک ماهیانه نیست.</p>
+                            <a href="javascript:void(0)" class="title h5 text-dark">پشتیبان آنلاین</a>
+                            <p class="text-muted mt-2">پشتیبانی آنلاین 24 ساعته در تلگرام برای معامله گران بازار فارکس</p>
                             <a href="javascript:void(0)" class="text-primary read-more"></a>
-                            <i class="uil uil-moneybag-alt text-primary full-img"></i>
+                            <i class="uil uil-phone-volume text-primary full-img"></i>
                         </div>
                     </div>
                 </div>
@@ -139,11 +139,15 @@
                 </div>
                 <div class="col-lg-6 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                     <div class="section-title ms-lg-5">
-                        <h4 class="title mb-4">مدیریت رمزنگاری برای مشاغل</h4>
-                        <p class="text-muted">به دلیل استفاده گسترده از آن به عنوان متن پر کننده برای طرح بندی, غیرقابل
+                        <h4 class="title mb-4">
+                            مدیریت رمزنگاری برای مشاغل
+                        </h4>
+                        <p class="text-muted">
+                            به دلیل استفاده گسترده از آن به عنوان متن پر کننده برای طرح بندی, غیرقابل
                             خواندن از اهمیت زیادی برخوردار است: ادراک انسان برای شناسایی الگوها و تکرارهای خاص در متن
                             تنظیم
-                            شده است. اگر توزیع حروف تأثیر بصری داشته باشد.</p>
+                            شده است. اگر توزیع حروف تأثیر بصری داشته باشد.
+                        </p>
                         <ul class="list-unstyled text-muted">
                             <li class="mb-0"><span class="text-primary h5 me-2"><i
                                         class="uil uil-check-circle align-middle"></i></span>راه حل های بازاریابی
