@@ -2,41 +2,107 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\PostStatus;
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
+use App\Models\tag;
+use Carbon\Carbon;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use FilamentTiptapEditor\TiptapEditor;
 use FilamentTiptapEditor\Enums\TiptapOutput;
-
 
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TiptapEditor::make('content')
-//                    ->profile('default|simple|minimal|none|custom')
-//                    ->tools([]) // individual tools to use in the editor, overwrites profile
-//                    ->disk('string') // optional, defaults to config setting
-//                    ->directory('string or Closure returning a string') // optional, defaults to config setting
-//                    ->acceptedFileTypes(['array of file types']) // optional, defaults to config setting
-////                    ->maxFileSize('integer in KB') // optional, defaults to config setting
-//                    ->maxContentWidth('5xl')
-                    ->output(TiptapOutput::Json)
-                    ->required()
-            ]);
+                Forms\Components\Group::make()
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                Placeholder::make('created_at')
+                                    ->label('Created at')
+                                    ->content(fn(Post $record): ?string => Carbon::create($record->created_at)?->diffForHumans()),
+                                Placeholder::make('updated_at')
+                                    ->label('updated at')
+                                    ->content(fn(Post $record): ?string => (!empty($record->updated_at)) ? Carbon::create($record->updated_at ?? null)?->diffForHumans() : ''),
+                                Checkbox::make('showIndex')->label('show in page index')
+                            ])
+                            ->columnSpan(['lg' => 1])
+                            ->hidden(fn(?Post $record) => $record === null),
+                    ]),
+                Forms\Components\Group::make()
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                Select::make('tagID')
+                                    ->label('Tag')
+                                    ->suffixIcon('heroicon-m-archive-box')
+                                    ->options(tag::all()->pluck('name','id'))
+                                    ->native(false)
+                                    ->suffixIcon('heroicon-m-circle-stack')
+                                    ->searchable()
+                                    ->required()
+                                    ->markAsRequired(),
+                                Select::make('status')
+                                    ->suffixIcon('heroicon-m-archive-box')
+                                    ->options(PostStatus::options())
+                                    ->default(PostStatus::PendingReview)
+                                    ->native(false)
+                                    ->suffixIcon('heroicon-m-circle-stack')
+                                    ->required()
+                                    ->markAsRequired(),
+                                FileUpload::make('posterSID')
+                                    ->label('poster')
+                                    ->image()
+                                    ->imageEditor()
+                                    ->disk('public')
+                                    ->directory('images')
+                                    ->visibility('public')
+                                    ->required()
+                                    ->markAsRequired()
+                                    ->downloadable(),
+                                Textarea::make('description')
+                                    ->autosize()
+                                    ->markAsRequired()
+                            ])
+                            ->columns(2),
+                    ])
+                    ->columnSpan(['lg' => fn(?Post $record) => $record === null ? 3 : 2]),
+                Forms\Components\Group::make()
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                TagsInput::make('postHashtag')
+                                    ->required()
+                                    ->markAsRequired()
+                            ]),
+                        Section::make()
+                            ->schema([
+                                TiptapEditor::make('postContent')
+                                    ->output(TiptapOutput::Json)
+                                    ->required()
+                                    ->markAsRequired()
+                            ])
+                    ])->columnSpanFull()
+                    ->hidden(fn(?Post $record) => $record === null),
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table

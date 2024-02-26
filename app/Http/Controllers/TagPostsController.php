@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\post;
+use App\Http\Requests\StoretagPostsRequest;
+use App\Http\Requests\UpdatetagPostsRequest;
+use App\Models\tagPosts;
 
-class PostController extends Controller
+class TagPostsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $post = Post::query()->find(1);
-        return view('post.page-blog-sidebar',compact('post'));
+        //
     }
 
     /**
@@ -26,7 +27,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(StoretagPostsRequest $request)
     {
         //
     }
@@ -34,7 +35,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(post $post)
+    public function show(tagPosts $tagPosts)
     {
         //
     }
@@ -42,7 +43,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(post $post)
+    public function edit(tagPosts $tagPosts)
     {
         //
     }
@@ -50,7 +51,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update( post $post)
+    public function update(UpdatetagPostsRequest $request, tagPosts $tagPosts)
     {
         //
     }
@@ -58,7 +59,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(post $post)
+    public function destroy(tagPosts $tagPosts)
     {
         //
     }

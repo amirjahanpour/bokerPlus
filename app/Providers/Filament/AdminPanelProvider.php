@@ -53,6 +53,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->sidebarCollapsibleOnDesktop()
+            ->maxContentWidth('full')
+            ->font('Poppins');
     }
 }
