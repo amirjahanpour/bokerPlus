@@ -8,12 +8,17 @@ function toggleSwitcher() {
 	}
 };
 
-function setColor(theme) {
-    document.getElementById('color-opt').href = './asset/css/colors/' + theme + '.css';
+function setColor(theme,url) {
+    // document.getElementById('color-opt').href = './asset/css/colors/' + theme + '.css';
+    const link = document.getElementById('color-opt');
+    link.href = url + '/colors/' + theme + '.css';
     toggleSwitcher(false);
 };
 
-function setTheme(theme) {
-    document.getElementById('theme-opt').href = './asset/css/' + theme + '.min.css';
+function setTheme(theme,url) {
+    // document.getElementById('theme-opt').href = './asset/css/' + theme + '.min.css';
+    const link = document.getElementById('theme-opt');
+    link.href = url + '/' + theme + '.min.css';
+
     toggleSwitcher(false);
 };

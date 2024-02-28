@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PostContent extends Model
 {
@@ -18,4 +19,9 @@ class PostContent extends Model
         'content' => 'json',
         'hashtag'=> 'json'
     ];
+
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class,'postID');
+    }
 }

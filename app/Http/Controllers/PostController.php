@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PostStatus;
 use App\Models\post;
+use App\Models\PostContent;
+use App\Models\Tag;
 
 class PostController extends Controller
 {
@@ -11,55 +14,32 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::query()->find(1);
-        return view('post.page-blog-sidebar',compact('post'));
-    }
+        $tags = Tag::select('id','name')
+            ->with('tagPosts:postID,tagID')
+            ->withCount('tagPosts as countPost')
+            ->where('isArchive',false)
+            ->orderBy('sort')
+            ->get();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $postIDs = $tags->pluck('tagPosts.*.postID')
+            ->flatten()
+            ->toArray();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store()
-    {
-        //
+        $posts = Post::whereIn('id',array_unique($postIDs))
+            ->where('status',PostStatus::Published)
+            ->paginate(4);
+
+        return view('post.index',compact('posts','tags'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(post $post)
+    public function show(int $postID)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(post $post)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update( post $post)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(post $post)
-    {
-        //
+        $post = PostContent::where('postID',$postID)
+            ->with('post:id,description')
+            ->firstOrFail();
+        return view('post.show',compact('post'));
     }
 }

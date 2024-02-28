@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Tag extends Model
 {
@@ -17,5 +18,10 @@ class Tag extends Model
         'sort' => 'integer',
         'isArchive' => 'boolean'
     ];
+
+    public function tagPosts(): hasMany
+    {
+        return $this->hasMany(TagPosts::class,'tagID');
+    }
 
 }

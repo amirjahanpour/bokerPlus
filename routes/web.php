@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index.blockchain');
-});
+Route::get('/', [Controller::class,'index'])->name('index');
 
-Route::get('/post', [\App\Http\Controllers\PostController::class,'index']);
+Route::get('/post', [PostController::class,'index'])->name('post.index');
+Route::get('/post/{postID}', [PostController::class,'show'])->name('post.show');
