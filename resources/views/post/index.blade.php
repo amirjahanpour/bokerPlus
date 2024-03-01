@@ -1,25 +1,26 @@
 @extends('layouts.app')
 @section('content')
-        <section class="bg-half bg-light d-table w-100">
+        <section class="bg-half d-table w-100" style="background: url({{ asset('asset/images/index/2.jpg') }}) center center;">
+            <div class="bg-overlay"></div>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
                         <div class="page-next-level">
-                            <h4 class="title"> وبلاگ </h4>
+                            <h4 class="title text-white title-dark"> وبلاگ </h4>
                             <div class="page-next">
                                 <nav aria-label="breadcrumb" class="d-inline-block">
                                     <ul class="breadcrumb bg-white rounded shadow mb-0">
                                         <li class="breadcrumb-item active" aria-current="page"><a href="{{route('index')}}">بروکر پلاس</a></li>
+
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                    </div>  <!--end col-->
+                    </div><!--end col-->
                 </div><!--end row-->
             </div> <!--end container-->
         </section><!--end section-->
         <!-- Hero End -->
-
         <!-- Shape Start -->
         <div class="position-relative">
             <div class="shape overflow-hidden text-white">
@@ -29,7 +30,6 @@
             </div>
         </div>
         <!--Shape End-->
-
         <!-- Blog Start -->
         <section class="section">
             <div class="container">
@@ -38,26 +38,28 @@
                     <div class="col-lg-8 col-md-6">
                         <div class="row">
                             @foreach($posts as $post)
-                            <div class="col-lg-6 col-md-12 mb-4 pb-2">
-                                <div class="card blog rounded border-0 shadow">
-                                    <div class="position-relative">
-                                        <img src="{{ url('storage/'.$post->posterSID) }}" class="card-img-top rounded-top" alt="...">
-                                        <div class="overlay rounded-top bg-dark"></div>
-                                    </div>
-                                    <div class="card-body content">
-                                        <h5><a href="javascript:void(0)" class="card-title title text-dark">{{$post->description}}</a></h5>
-                                        <div class="post-meta d-flex justify-content-between mt-3">
-                                            <a href="{{route('post.show',['postID' => $post])}}" class="text-muted readmore">ادامه مطلب  <i class="uil uil-angle-left-b align-middle"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="author">
-                                        <small class="text-light user d-block"><i class="uil uil-user"></i> کالوین لورس</small>
-                                        <small class="text-light date"><i class="uil uil-calendar-alt"></i> اردیبهشت 1400</small>
-                                    </div>
-                                </div>
-                            </div><!--end col-->
+                                <div class="col-12 mb-4 pb-2">
+                                    <div class="card blog rounded border-0 shadow overflow-hidden">
+                                        <div class="row align-items-center g-0">
+                                            <div class="col-md-6">
+                                                <a href="{{route('post.show',['postID' => $post])}}">
+                                                    <img src="{{ url('storage/'.$post->posterSID) }}" class="img-fluid" alt="">
+                                                </a>
+                                            </div><!--end col-->
+                                            <div class="col-md-6">
+                                                <div class="card-body content">
+                                                    <h5><a href="{{route('post.show',['postID' => $post])}}" class="card-title title text-dark">{{$post->description}}</a></h5>
+                                                    <div class="post-meta float-end d-flex justify-content-between mt-3 align-content-end">
+                                                        <a href="{{route('post.show',['postID' => $post])}}" class="text-muted readmore">
+                                                            ادامه مطلب  <i class="uil uil-angle-left-b align-middle"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div><!--end col-->
+                                        </div> <!--end row-->
+                                    </div><!--end blog post-->
+                                </div><!--end col-->
                             @endforeach
-
                             <!-- PAGINATION START -->
                             <div class="col-12">
                                 <ul class="pagination justify-content-center mb-0">
@@ -68,33 +70,20 @@
                         </div><!--end row-->
                     </div><!--end col-->
                     <!-- BLog End -->
-
                     <!-- START SIDEBAR -->
                     <div class="col-lg-4 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                         <div class="card border-0 sidebar sticky-bar rounded shadow">
                             <div class="card-body">
-                                <!-- SEARCH -->
-                                <div class="widget">
-                                    <form role="search" method="get">
-                                        <div class="input-group mb-3 border rounded">
-                                            <input type="text" id="s" name="s" class="form-control border-0" placeholder="جستجوی کلمه کلیدی...">
-                                            <button type="submit" class="input-group-text bg-transparent border-0" id="searchsubmit"><i class="uil uil-search"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- SEARCH -->
-
                                 <!-- Categories -->
                                 <div class="widget mb-4 pb-2">
-                                    <h5 class="widget-title">دسته بندیها </h5>
+                                    <h5 class="widget-title">دسته بندی ها </h5>
                                     <ul class="list-unstyled mt-4 mb-0 blog-categories">
                                         @foreach($tags as $tag)
-                                        <li><a href="jvascript:void(0)">{{$tag->name}}</a> <span class="float-end">{{$tag->countPost}}</span></li>
+                                        <li class="active"><a href="{{route('post.index',$tag->id)}}">{{$tag->name}}</a> <span class="float-end">{{$tag->countPost}}</span></li>
                                         @endforeach
                                     </ul>
                                 </div>
                                 <!-- Categories -->
-
                                 <!-- SOCIAL -->
                                 <div class="widget">
                                     <h5 class="widget-title">دنبال کردن ما</h5>

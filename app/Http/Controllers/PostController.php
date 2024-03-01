@@ -21,7 +21,10 @@ class PostController extends Controller
             ->orderBy('sort')
             ->get();
 
-        $postIDs = $tags->pluck('tagPosts.*.postID')
+        $postIDs = $tags->when(
+            (integer)Request()->tagID,
+            fn($query) => $query->where('id',Request()->tagID)
+        )->pluck('tagPosts.*.postID')
             ->flatten()
             ->toArray();
 
@@ -38,7 +41,7 @@ class PostController extends Controller
     public function show(int $postID)
     {
         $post = PostContent::where('postID',$postID)
-            ->with('post:id,description')
+            ->with('post:id,description,posterSID')
             ->firstOrFail();
         return view('post.show',compact('post'));
     }

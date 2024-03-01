@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Premium Bootstrap 5 Landing Page Template"/>
     <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern"/>
-    <meta name="author" content="JafarAbbasi"/>
-    <meta name="email" content="jabasi26@gmail.com"/>
-    <meta name="website" content="https://www.rtl-theme.com/author/tn_plugin/"/>
-    <meta name="Version" content="v3.2.1"/>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}">
     <!-- Bootstrap -->
@@ -28,27 +24,12 @@
     <div class="container">
         <!-- Logo container-->
         <div>
-            <a class="logo" href="index.html">
+            <a class="logo" href="{{route('index')}}">
                 <img src="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}" class="l-dark" height="80" alt="">
                 <img src="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}" class="l-light" height="100" alt="">
             </a>
         </div>
         <ul class="buy-button list-inline mb-0">
-            <li class="list-inline-item mb-0">
-                <div class="dropdown">
-                    <button type="button" class="btn btn-link text-decoration-none dropdown-toggle p-0 pe-2"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="uil uil-search text-muted"></i>
-                    </button>
-                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 py-0"
-                         style="width: 300px;">
-                        <form>
-                            <input type="text" id="text" name="name" class="form-control border bg-white"
-                                   placeholder="جستجو...">
-                        </form>
-                    </div>
-                </div>
-            </li>
             <li class="list-inline-item mb-0">
                 <a href="#" class="btn btn-icon btn-primary"><i class="uil uil-user icons"></i></a>
             </li>
@@ -74,27 +55,156 @@
         <div id="navigation">
             <!-- Navigation Menu-->
             <ul class="navigation-menu nav-light">
-                <li><a href="index.html" class="sub-menu-item">صفحه اصلی </a></li>
-
-                <li class="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)">اسناد </a><span class="menu-arrow"></span>
-                    <ul class="submenu">
-                        <li><a href="documentation.html" class="sub-menu-item">مستند </a></li>
-                        <li><a href="changelog.html" class="sub-menu-item">تغییرات </a></li>
-                        <li><a href="components.html" class="sub-menu-item">اجزاء </a></li>
-                        <li><a href="widget.html" class="sub-menu-item">ابزارک </a></li>
-                    </ul>
-                </li>
+                <li><a href="{{route('index')}}" class="sub-menu-item">صفحه اصلی </a></li>
+                <li><a href="{{route('post.index')}}" class="sub-menu-item">وبلاگ</a></li>
             </ul><!--end navigation menu-->
-            <div class="buy-menu-btn d-none">
-                <a href="https://www.rtl-theme.com/?p=133270" target="_blank" class="btn btn-primary">خرید از راست
-                    چین </a>
-            </div><!--end login button-->
         </div><!--end navigation-->
     </div><!--end container-->
 </header>
 
 @yield('content')
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
+                <a href="#" class="logo-footer">
+                    <img src="{{asset('asset/images/logo-light.png')}}" height="24" alt="">
+                </a>
+                <p class="mt-4">کار با لنـدریــک را شروع کنید که می تواند همه چیزهایی را که برای ایجاد آگاهی ، ایجاد
+                    ترافیک ، اتصال به آن نیاز دارید فراهم کند.</p>
+                <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                data-feather="facebook"
+                                class="fea icon-sm fea-social"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                data-feather="twitter"
+                                class="fea icon-sm fea-social"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                data-feather="linkedin"
+                                class="fea icon-sm fea-social"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <h5 class="text-light footer-head">شرکت </h5>
+                <ul class="list-unstyled footer-list mt-4">
+                    <li><a href="page-aboutus.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>
+                            درباره
+                            ما </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>
+                            خدمات
+                        </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> تیم
+                        </a>
+                    </li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> قیمت
+                            گذاری </a></li>
+                    <li><a href="#" class="text-foot"><i
+                                class="uil uil-angle-left-b me-1"></i>
+                            پروژه </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> مشاغل
+                        </a>
+                    </li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>
+                            وبلاگ
+                        </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>
+                            ورود
+                        </a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <h5 class="text-light footer-head">لینک های مفید </h5>
+                <ul class="list-unstyled footer-list mt-4">
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> خدمات
+                            سایت
+                        </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> حریم
+                            خصوصی </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>
+                            مستند
+                        </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> تغییرات
+                        </a></li>
+                    <li><a href="#" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> اجزاء
+                        </a>
+                    </li>
+                </ul>
+            </div><!--end col-->
+
+            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <h5 class="text-light footer-head">خبرنامه </h5>
+                <p class="mt-4">ثبت نام کنید و آخرین نکات را از طریق ایمیل دریافت کنید.</p>
+                <form>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="foot-subscribe mb-3">
+                                <label class="form-label">ایمیل خود را بنویسید <span
+                                        class="text-danger">*</span></label>
+                                <div class="form-icon position-relative">
+                                    <i data-feather="mail" class="fea icon-sm icons"></i>
+                                    <input type="email" name="email" id="emailsubscribe"
+                                           class="form-control ps-5 rounded" placeholder="ایمیل شما: " required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="d-grid">
+                                <input type="submit" id="submitsubscribe" name="send" class="btn btn-soft-primary"
+                                       value="خبرنامه">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer footer-bar">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-sm-6">
+                <div class="text-sm-start">
+                    <p class="mb-0">©
+                        <script>document.write(new Date().getFullYear())</script>
+                        لنـدریــک. طراحی شده با <i class="mdi mdi-heart text-danger"></i> توسط <a
+                            href="https://www.rtl-theme.com/author/tn_plugin/" target="_blank" class="text-reset">جعفر
+                            عباسی </a>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                <ul class="list-unstyled text-sm-end mb-0">
+                    <li class="list-inline-item"><a href="javascript:void(0)"><img
+                                src="{{asset('asset/images/payments/american-ex.png')}}"
+                                class="avatar avatar-ex-sm"
+                                title="آمریکن اکسپرس" alt=""></a>
+                    </li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><img
+                                src="{{asset('asset/images/payments/discover.png')}}"
+                                class="avatar avatar-ex-sm"
+                                title="کشف کردن" alt=""></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><img
+                                src="{{asset('asset/images/payments/master-card.png')}}"
+                                class="avatar avatar-ex-sm"
+                                title="مستر کارت" alt=""></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><img
+                                src="{{asset('asset/images/payments/paypal.png')}}"
+                                class="avatar avatar-ex-sm"
+                                title="پی پال" alt=""></a></li>
+                    <li class="list-inline-item"><a href="javascript:void(0)"><img
+                                src="{{asset('asset/images/payments/visa.png')}}"
+                                class="avatar avatar-ex-sm"
+                                title="ویزا" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <!-- Back to top -->
 <a href="#" onclick="topFunction()" id="back-to-top" class="btn btn-icon btn-primary back-to-top"><i
