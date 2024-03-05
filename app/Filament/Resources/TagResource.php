@@ -8,6 +8,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Carbon\Carbon;
 use Filament\Forms\Components\Placeholder;
@@ -78,7 +79,18 @@ class TagResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name'),
+                TextColumn::make('sort')
+                    ->toggleable(),
+                TextColumn::make('isArchive'),
+                TextColumn::make('created_at')
+                    ->sortable()
+                    ->toggleable()
+                    ->jalaliDate(),
+                TextColumn::make('updated_at')
+                    ->sortable()
+                    ->toggleable()
+                    ->jalaliDate(),
             ])
             ->filters([
                 //

@@ -18,6 +18,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
 use FilamentTiptapEditor\Enums\TiptapOutput;
@@ -109,7 +110,26 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('status')
+                   ,
+                TextColumn::make('description')
+                    ->toggleable()
+                    ->limit(20)
+                    ->tooltip(function (TextColumn $column): ?string {
+                        $state = $column->getState();
+                        if (strlen($state) <= $column->getCharacterLimit()) {
+                            return null;
+                        }
+                        return $state;
+                    }),
+                TextColumn::make('created_at')
+                    ->sortable()
+                    ->toggleable()
+                    ->jalaliDate(),
+                TextColumn::make('updated_at')
+                    ->sortable()
+                    ->toggleable()
+                    ->jalaliDate(),
             ])
             ->filters([
                 //

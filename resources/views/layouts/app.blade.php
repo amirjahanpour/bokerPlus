@@ -241,7 +241,7 @@
                 <a class="color8" href="javascript: void(0);" onclick="setColor('slateblue','{{url('/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color9" href="javascript: void(0);" onclick="setColor('yellow')"></a>
+                <a class="color9" href="javascript: void(0);" onclick="setColor('yellow','{{url('/asset/css/')}}')"></a>
             </li>
         </ul>
 
