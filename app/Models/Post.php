@@ -12,12 +12,14 @@ class Post extends Model
 
     protected $table = 'posts';
     protected $fillable = [
+        'title',
         'description',
         'posterSID',
         'status'
     ];
 
     protected $casts = [
+        'title' => 'string',
         'description' => 'string',
         'posterSID' => 'string',
         'status' => PostStatus::class,

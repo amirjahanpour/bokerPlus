@@ -47,6 +47,7 @@ class TagResource extends Resource
                                 TextInput::make('name')
                                     ->suffixIcon('heroicon-m-cube-transparent')
                                     ->string()
+                                    ->markAsRequired()
                                     ->required(),
                                 Select::make('isArchive')
                                     ->label('Archive')

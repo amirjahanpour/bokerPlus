@@ -15,6 +15,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -52,6 +53,11 @@ class PostResource extends Resource
                     ->schema([
                         Section::make()
                             ->schema([
+                                TextInput::make('title')
+                                    ->suffixIcon('heroicon-m-cube-transparent')
+                                    ->string()
+                                    ->required()
+                                    ->unique(),
                                 Select::make('tagID')
                                     ->label('Tag')
                                     ->suffixIcon('heroicon-m-archive-box')
@@ -68,7 +74,8 @@ class PostResource extends Resource
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
                                     ->required()
-                                    ->markAsRequired(),
+                                    ->markAsRequired()
+                                    ->columnSpanFull(),
                                 FileUpload::make('posterSID')
                                     ->label('poster')
                                     ->image()
@@ -110,8 +117,9 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('status')
-                   ,
+                TextColumn::make('status'),
+                TextColumn::make('title')
+                    ->toggleable(),
                 TextColumn::make('description')
                     ->toggleable()
                     ->limit(20)
