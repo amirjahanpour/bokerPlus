@@ -37,6 +37,7 @@ class EditPost extends EditRecord
 
     protected function handleRecordUpdate(Model $record, array $data): Model
     {
+        $data['title'] = trim($data['title']);
         $record->update($data);
 
         TagPosts::where('postID',$record->id)

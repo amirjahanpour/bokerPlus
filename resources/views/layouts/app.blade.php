@@ -57,6 +57,20 @@
             <ul class="navigation-menu nav-light">
                 <li><a href="{{route('index')}}" class="sub-menu-item">صفحه اصلی </a></li>
                 <li><a href="{{route('post.index')}}" class="sub-menu-item">وبلاگ</a></li>
+                @foreach($navigations as $title => $navigation)
+                    <li class="has-submenu parent-menu-item">
+                        <a href="javascript:void(0)">{{$title}} </a><span class="menu-arrow"></span>
+                        <ul class="submenu">
+                            @foreach($navigation as $post)
+                                <li>
+                                    <a href="{{route('post.show',['title' => $post['titlePost']])}}" class="sub-menu-item">
+                                        {{$post['title']}}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endforeach
             </ul><!--end navigation menu-->
         </div><!--end navigation-->
     </div><!--end container-->

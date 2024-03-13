@@ -191,7 +191,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 order-1 order-md-2">
-                    <img src="{{asset('asset/images/crypto/iphone.png')}}" class="img-fluid" alt="">
+                    <img src="{{asset('asset/images/index/mobile_telegram.png')}}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>

@@ -13,6 +13,7 @@ class CreatePost extends CreateRecord
 
     protected function handleRecordCreation(array $data): \Illuminate\Database\Eloquent\Model
     {
+        $data['title'] = trim($data['title']);
         $post = static::getModel()::create($data);
         TagPosts::create([
             'postID' => $post->id,

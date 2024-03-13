@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
         <!-- start -->
-        <section class="bg-half d-table w-100" style="background: url({{ url('storage/'.$post->post->posterSID) }}) center center;">
+        <section class="bg-half d-table w-100" style="background: url({{ url('storage/'.$postContent->post->posterSID) }}) center center;">
             <div class="bg-overlay"></div>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
                         <div class="page-next-level">
-                            <h4 class="title">{{$post->post->description}}</h4>
+                            <h4 class="title">{{$postContent->post->description}}</h4>
                             <div class="page-next">
                                 <nav aria-label="breadcrumb" class="d-inline-block">
                                     <ul class="breadcrumb bg-white rounded shadow mb-0">
@@ -37,7 +37,7 @@
                     <div class="col-lg-9">
                         <div class="card shadow rounded border-0">
                             <div class="card-body">
-                                {!! tiptap_converter()->asHTML($post->content) !!}
+                                {!! tiptap_converter()->asHTML($postContent->content) !!}
                             </div>
                         </div>
                     </div><!--end col-->
@@ -53,7 +53,7 @@
                     <div class="widget mb-4 pb-2">
                         <h5 class="widget-title">برچسب ها</h5>
                         <div class="tagcloud mt-4">
-                            @foreach($post->hashtag as $hashtag)
+                            @foreach($postContent->hashtag as $hashtag)
                                 <a class="rounded">{{$hashtag}}</a>
                             @endforeach
                         </div>

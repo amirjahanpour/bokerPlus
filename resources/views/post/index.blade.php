@@ -42,15 +42,19 @@
                                     <div class="card blog rounded border-0 shadow overflow-hidden">
                                         <div class="row align-items-center g-0">
                                             <div class="col-md-6">
-                                                <a href="{{route('post.show',['postID' => $post])}}">
+                                                <a href="{{route('post.show',['title' => $post->slugTitle])}}">
                                                     <img src="{{ url('storage/'.$post->posterSID) }}" class="img-fluid" alt="">
                                                 </a>
                                             </div><!--end col-->
                                             <div class="col-md-6">
                                                 <div class="card-body content">
-                                                    <h5><a href="{{route('post.show',['postID' => $post])}}" class="card-title title text-dark">{{$post->description}}</a></h5>
+                                                    <h5>
+                                                        <a href="{{route('post.show',['title' => $post->slugTitle])}}" class="card-title title text-dark">
+                                                            {{$post->description}}
+                                                        </a>
+                                                    </h5>
                                                     <div class="post-meta float-end d-flex justify-content-between mt-3 align-content-end">
-                                                        <a href="{{route('post.show',['postID' => $post])}}" class="text-muted readmore">
+                                                        <a href="{{route('post.show',['title' => $post->slugTitle])}}" class="text-muted readmore">
                                                             ادامه مطلب  <i class="uil uil-angle-left-b align-middle"></i>
                                                         </a>
                                                     </div>

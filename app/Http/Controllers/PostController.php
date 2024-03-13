@@ -32,17 +32,27 @@ class PostController extends Controller
             ->where('status',PostStatus::Published)
             ->paginate(4);
 
+        $posts->each(function ($post) {
+            $string = preg_replace('/[\/_|+ -]+/', '-', $post->title);
+            $post->slugTitle = $string;
+        });
+
         return view('post.index',compact('posts','tags'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(int $postID)
+    public function show(string $title)
     {
-        $post = PostContent::where('postID',$postID)
+        $formattedTitle = str_replace("-", " ", $title);
+
+        $post = Post::where('title', $formattedTitle)->firstOrFail();
+
+        $postContent = PostContent::where('postID', $post->id)
             ->with('post:id,description,posterSID')
             ->firstOrFail();
-        return view('post.show',compact('post'));
+
+        return view('post.show', compact('postContent'));
     }
 }

@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Controller::class,'index'])->name('index');
 
 Route::get('/post/{tagID?}', [PostController::class,'index'])->name('post.index');
-Route::get('/post/get/{postID}', [PostController::class,'show'])->name('post.show');
+Route::get('/post/get/{title}', [PostController::class,'show'])->name('post.show');
