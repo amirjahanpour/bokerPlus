@@ -14,9 +14,10 @@
                             با مجموعه بروکر پلاس درآمد دلاری داشته باشید و از نظر اقتصادی یک گام جلوتر از بقیه باشید. ما در این مسیر تا رسیدن شما به درآمد دلاری در کنارتان خواهیم ماند.
                         </h5>
                         <div class="subcribe-form mt-4 pt-2">
-                            <form>
-                                <label for="email"></label>
-                                <input type="text" id="email" name="email" class="border bg-white rounded-pill"
+                            <form method="POST" action="{{route('contactDetail.create')}}">
+                                @csrf
+                                <label for="message"></label>
+                                <input type="text" id="message" name="email" class="border bg-white rounded-pill"
                                        required placeholder="شماره همراه یا آیدی تلگرام">
                                 <button type="submit" class="btn btn-pills btn-primary">
                                     عضویت در کانال VIP
@@ -28,6 +29,26 @@
             </div>
         </div>
     </section>
+    @if ($errors->any())
+        <section class="section pb-0">
+            <div class="row">
+                <div class="alert alert-success error_message">
+                    @foreach ($errors->all() as $error)
+                        <div>{{$error}}</div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+    @if(session()->has('success'))
+        <section class="section pb-0">
+            <div class="row">
+                <div class="alert alert-success error_message">
+                    {{ session('success') }}
+                </div>
+            </div>
+        </section>
+    @endif
     <section class="section">
         <div class="container">
             <div class="row justify-content-center">
@@ -235,9 +256,10 @@
                             چیزهایی را که برای ایجاد آگاهی ، ایجاد ترافیک ، اتصال به آن نیاز دارید فراهم کند.</p>
                     </div>
                     <div class="subcribe-form mt-4">
-                        <form>
+                        <form method="POST" action="{{route('contactDetail.create')}}">
+                            @csrf
                             <div class="mb-2">
-                                <input type="email" id="email" name="email" class="rounded-pill" placeholder="ایمیل:">
+                                <input type="email" id="message" name="message" class="rounded-pill" placeholder="ایمیل:">
                                 <button type="submit" class="btn btn-pills btn-primary">مشترک شدن</button>
                             </div>
                         </form>

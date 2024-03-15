@@ -71,6 +71,7 @@
                         </ul>
                     </li>
                 @endforeach
+                <li><a href="{{route('contactDetail.index')}}" class="sub-menu-item">تماس با ما</a></li>
             </ul><!--end navigation menu-->
         </div><!--end navigation-->
     </div><!--end container-->

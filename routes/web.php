@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactDetailController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -19,3 +20,5 @@ Route::get('/', [Controller::class,'index'])->name('index');
 
 Route::get('/post/{tagID?}', [PostController::class,'index'])->name('post.index');
 Route::get('/post/get/{title}', [PostController::class,'show'])->name('post.show');
+Route::get('/contactUs', [ContactDetailController::class,'index'])->name('contactDetail.index');
+Route::post('/contactUs/create', [ContactDetailController::class,'create'])->name('contactDetail.create');
