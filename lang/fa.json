@@ -4,7 +4,7 @@
   "Title": "عنوان",
   "Owner i d": "راهبرد اصلی",
   "Post": "پست",
-  "Created at": "زمان ایحاد",
+  "Created at": "زمان ایجاد",
   "Updated at": "زمان بروز رسانی",
   "Is archive": "آرشیو شود؟",
   "post managements": "مدیریت پست ها",
@@ -19,6 +19,11 @@
   "Sort": "شماره ترتیب",
   "tag": "دسته بندی",
   "tag managements": "مدیریت دسته بندی ها",
-  "": "",
-  "": ""
+  "Family": "نام خانوادگی",
+  "Username": "نام کاربری",
+  "Email": "ایمیل",
+  "Password": "پسورد",
+  "Password confirmation": "تکرار پسورد",
+  "User": "کاربر",
+  "User managements": "مدیریت کاربران"
 }

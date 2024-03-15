@@ -3,14 +3,11 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
-use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Actions\DeleteAction;
@@ -18,8 +15,6 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Hash;
 
 class UserResource extends Resource
@@ -27,6 +22,16 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    public static function getModelLabel(): string
+    {
+        return __('User');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('User managements');
+    }
 
     public static function form(Form $form): Form
     {
@@ -46,7 +51,8 @@ class UserResource extends Resource
                             ->markAsRequired()
                             ->string()
                             ->minLength(2)
-                            ->maxLength(50),
+                            ->maxLength(50)
+                            ->translateLabel(),
                         TextInput::make('username')
                             ->required()
                             ->markAsRequired()
@@ -54,8 +60,8 @@ class UserResource extends Resource
                             ->minLength(2)
                             ->maxLength(100)
                             ->unique(ignoreRecord: true)
-                            ->helperText('Your full name here, including any middle names.')
-                            ->suffixIcon('heroicon-m-user-circle'),
+                            ->suffixIcon('heroicon-m-user-circle')
+                            ->translateLabel(),
                         TextInput::make('email')
                             ->email()
                             ->required()
@@ -67,7 +73,8 @@ class UserResource extends Resource
                                 '@gmail.com',
                                 '@yahoo.com',
                             ])
-                            ->suffixIcon('heroicon-m-envelope'),
+                            ->suffixIcon('heroicon-m-envelope')
+                            ->translateLabel(),
                         TextInput::make('password')
                             ->autocomplete('new-password')
                             ->password()
@@ -77,7 +84,8 @@ class UserResource extends Resource
                             ->confirmed()
                             ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
                             ->dehydrated(fn(?string $state): bool => filled($state))
-                            ->required(fn(string $operation): bool => $operation === 'create'),
+                            ->required(fn(string $operation): bool => $operation === 'create')
+                            ->translateLabel(),
                         TextInput::make('password_confirmation')
                             ->autocomplete('new-password')
                             ->password()
@@ -86,6 +94,7 @@ class UserResource extends Resource
                             ->markAsRequired()
                             ->minLength(6)
                             ->required(fn(string $operation): bool => $operation === 'create')
+                            ->translateLabel()
                     ])
             ]);
     }
@@ -103,7 +112,8 @@ class UserResource extends Resource
                             return null;
                         }
                         return $state;
-                    }),
+                    })
+                    ->translateLabel(),
                 TextColumn::make('family')
                     ->searchable(isIndividual: true)
                     ->limit(30)
@@ -113,7 +123,8 @@ class UserResource extends Resource
                             return null;
                         }
                         return $state;
-                    }),
+                    })
+                    ->translateLabel(),
                 TextColumn::make('username')
                     ->limit(30)
                     ->tooltip(function (TextColumn $column): ?string {
@@ -124,23 +135,28 @@ class UserResource extends Resource
                         return $state;
                     })
                     ->icon('heroicon-m-user-circle')
-                    ->searchable(isIndividual: true),
+                    ->searchable(isIndividual: true)
+                    ->translateLabel(),
                 TextColumn::make('email')
                     ->icon('heroicon-m-envelope')
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable()
+                    ->translateLabel(),
                 TextColumn::make('email_verified_at')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true)
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
                 TextColumn::make('created_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
                 TextColumn::make('updated_at')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true)
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel()
             ])
             ->actions([
                 EditAction::make(),
