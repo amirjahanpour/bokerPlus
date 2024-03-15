@@ -24,6 +24,16 @@ class NavigationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return __('navigation');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('navigation managements');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -33,17 +43,17 @@ class NavigationResource extends Resource
                         Section::make()
                             ->schema([
                                 Placeholder::make('created_at')
-                                    ->label('Created at')
                                     ->content(
                                         fn(Navigation $record): ?string =>
                                         Carbon::create($record->created_at)?->diffForHumans()
-                                    ),
+                                    )
+                                    ->translateLabel(),
                                 Placeholder::make('updated_at')
-                                    ->label('updated at')
                                     ->content(
                                         fn(Navigation $record): ?string =>
                                         (!empty($record->updated_at)) ? Carbon::create($record->updated_at ?? null)?->diffForHumans() : ''
                                     )
+                                ->translateLabel()
                             ])
                             ->columnSpan(['lg' => 1])
                             ->hidden(fn(?Navigation $record) => $record === null),
@@ -55,9 +65,9 @@ class NavigationResource extends Resource
                                 TextInput::make('title')
                                     ->suffixIcon('heroicon-m-cube-transparent')
                                     ->string()
-                                    ->required(),
+                                    ->required()
+                                    ->translateLabel(),
                                 Select::make('ownerID')
-                                    ->label('owner')
                                     ->suffixIcon('heroicon-m-archive-box')
                                     ->options(
                                         Navigation::whereNull('ownerID')
@@ -66,7 +76,8 @@ class NavigationResource extends Resource
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
                                     ->searchable()
-                                    ->nullable(),
+                                    ->nullable()
+                                    ->translateLabel(),
                                 Select::make('postID')
                                     ->label('Post')
                                     ->suffixIcon('heroicon-m-archive-box')
@@ -77,9 +88,9 @@ class NavigationResource extends Resource
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
                                     ->searchable()
-                                    ->requiredWith('ownerID'),
+                                    ->requiredWith('ownerID')
+                                    ->translateLabel(),
                                 Select::make('isArchive')
-                                    ->label('Archive')
                                     ->suffixIcon('heroicon-m-archive-box')
                                     ->options(
                                         [
@@ -90,7 +101,8 @@ class NavigationResource extends Resource
                                     ->default(true)
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
-                                    ->required(),
+                                    ->required()
+                                    ->translateLabel(),
                             ])
                             ->columns(2),
                     ])
@@ -103,20 +115,25 @@ class NavigationResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')
+                    ->translateLabel()
                     ->toggleable(),
                 TextColumn::make('ownerID')
                     ->formatStateUsing(
                         fn(string $state): string => Navigation::find($state)->title
-                    ),
-                TextColumn::make('post.title'),
+                    )
+                    ->translateLabel(),
+                TextColumn::make('post.title')
+                ->translateLabel(),
                 TextColumn::make('created_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
                 TextColumn::make('updated_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

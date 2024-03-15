@@ -39,7 +39,8 @@ class UserResource extends Resource
                             ->markAsRequired()
                             ->minLength(2)
                             ->maxLength(50)
-                            ->string(),
+                            ->string()
+                            ->translateLabel(),
                         TextInput::make('family')
                             ->required()
                             ->markAsRequired()

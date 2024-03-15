@@ -30,6 +30,16 @@ class PostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
+    public static function getModelLabel(): string
+    {
+        return __('Post');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('post managements');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -39,12 +49,14 @@ class PostResource extends Resource
                         Section::make()
                             ->schema([
                                 Placeholder::make('created_at')
-                                    ->label('Created at')
-                                    ->content(fn(Post $record): ?string => Carbon::create($record->created_at)?->diffForHumans()),
+                                    ->content(fn(Post $record): ?string => Carbon::create($record->created_at)?->diffForHumans())
+                                    ->translateLabel(),
                                 Placeholder::make('updated_at')
-                                    ->label('updated at')
-                                    ->content(fn(Post $record): ?string => (!empty($record->updated_at)) ? Carbon::create($record->updated_at ?? null)?->diffForHumans() : ''),
-                                Checkbox::make('showIndex')->label('show in page index')
+                                    ->content(
+                                        fn(Post $record): ?string => (!empty($record->updated_at)) ? Carbon::create($record->updated_at ?? null)?->diffForHumans() : '' )
+                                    ->translateLabel(),
+                                Checkbox::make('showIndex')
+                                ->translateLabel()
                             ])
                             ->columnSpan(['lg' => 1])
                             ->hidden(fn(?Post $record) => $record === null),
@@ -57,16 +69,17 @@ class PostResource extends Resource
                                     ->suffixIcon('heroicon-m-cube-transparent')
                                     ->string()
                                     ->required()
-                                    ->unique(),
+                                    ->unique()
+                                    ->translateLabel(),
                                 Select::make('tagID')
-                                    ->label('Tag')
                                     ->suffixIcon('heroicon-m-archive-box')
                                     ->options(tag::all()->pluck('name','id'))
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
                                     ->searchable()
                                     ->required()
-                                    ->markAsRequired(),
+                                    ->markAsRequired()
+                                    ->translateLabel(),
                                 Select::make('status')
                                     ->suffixIcon('heroicon-m-archive-box')
                                     ->options(PostStatus::options())
@@ -75,9 +88,9 @@ class PostResource extends Resource
                                     ->suffixIcon('heroicon-m-circle-stack')
                                     ->required()
                                     ->markAsRequired()
-                                    ->columnSpanFull(),
+                                    ->columnSpanFull()
+                                    ->translateLabel(),
                                 FileUpload::make('posterSID')
-                                    ->label('poster')
                                     ->image()
                                     ->imageEditor()
                                     ->disk('public')
@@ -85,10 +98,12 @@ class PostResource extends Resource
                                     ->visibility('public')
                                     ->required()
                                     ->markAsRequired()
-                                    ->downloadable(),
+                                    ->downloadable()
+                                    ->translateLabel(),
                                 Textarea::make('description')
                                     ->autosize()
                                     ->markAsRequired()
+                                    ->translateLabel()
                             ])
                             ->columns(2),
                     ])
@@ -100,6 +115,7 @@ class PostResource extends Resource
                                 TagsInput::make('postHashtag')
                                     ->required()
                                     ->markAsRequired()
+                                    ->translateLabel()
                             ]),
                         Section::make()
                             ->schema([
@@ -107,6 +123,7 @@ class PostResource extends Resource
                                     ->output(TiptapOutput::Json)
                                     ->required()
                                     ->markAsRequired()
+                                    ->translateLabel()
                             ])
                     ])->columnSpanFull()
                     ->hidden(fn(?Post $record) => $record === null),
@@ -117,9 +134,11 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('status'),
+                TextColumn::make('status')
+                ->translateLabel(),
                 TextColumn::make('title')
-                    ->toggleable(),
+                    ->toggleable()
+                    ->translateLabel(),
                 TextColumn::make('description')
                     ->toggleable()
                     ->limit(20)
@@ -129,15 +148,18 @@ class PostResource extends Resource
                             return null;
                         }
                         return $state;
-                    }),
+                    })
+                    ->translateLabel(),
                 TextColumn::make('created_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
                 TextColumn::make('updated_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
             ])
             ->filters([
                 //

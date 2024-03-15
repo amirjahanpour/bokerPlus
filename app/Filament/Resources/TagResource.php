@@ -22,6 +22,17 @@ class TagResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-hashtag';
 
+
+    public static function getModelLabel(): string
+    {
+        return __('tag');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('tag managements');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -31,10 +42,10 @@ class TagResource extends Resource
                         Section::make()
                             ->schema([
                                 Placeholder::make('created_at')
-                                    ->label('Created at')
+                                    ->translateLabel()
                                     ->content(fn(Tag $record): ?string => Carbon::create($record->created_at)?->diffForHumans()),
                                 Placeholder::make('updated_at')
-                                    ->label('updated at')
+                                    ->translateLabel()
                                     ->content(fn(Tag $record): ?string => (!empty($record->updated_at)) ? Carbon::create($record->updated_at ?? null)?->diffForHumans() : ''),
                             ])
                             ->columnSpan(['lg' => 1])
@@ -48,9 +59,9 @@ class TagResource extends Resource
                                     ->suffixIcon('heroicon-m-cube-transparent')
                                     ->string()
                                     ->markAsRequired()
-                                    ->required(),
+                                    ->required()
+                                    ->translateLabel(),
                                 Select::make('isArchive')
-                                    ->label('Archive')
                                     ->suffixIcon('heroicon-m-archive-box')
                                     ->options(
                                         [
@@ -61,12 +72,14 @@ class TagResource extends Resource
                                     ->default(true)
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
-                                    ->required(),
+                                    ->required()
+                                    ->translateLabel(),
                                 TextInput::make('sort')
                                     ->required()
                                     ->numeric()
                                     ->suffixIcon('heroicon-m-calendar-days')
                                     ->default(1)
+                                    ->translateLabel()
                             ])
                             ->columns(2),
 
@@ -80,18 +93,23 @@ class TagResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('name')
+                ->translateLabel(),
                 TextColumn::make('sort')
-                    ->toggleable(),
-                TextColumn::make('isArchive'),
+                    ->toggleable()
+                ->translateLabel(),
+                TextColumn::make('isArchive')
+                    ->translateLabel(),
                 TextColumn::make('created_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
                 TextColumn::make('updated_at')
                     ->sortable()
                     ->toggleable()
-                    ->jalaliDate(),
+                    ->jalaliDate()
+                    ->translateLabel(),
             ])
             ->filters([
                 //
