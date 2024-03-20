@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use App\Enums\PostStatus;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
-use App\Models\tag;
+use App\Models\Tag;
 use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Forms\Components\Checkbox;
@@ -73,7 +73,7 @@ class PostResource extends Resource
                                     ->translateLabel(),
                                 Select::make('tagID')
                                     ->suffixIcon('heroicon-m-archive-box')
-                                    ->options(tag::all()->pluck('name','id'))
+                                    ->options(Tag::all()->pluck('name','id'))
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')
                                     ->searchable()

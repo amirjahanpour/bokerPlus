@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\PostStatus;
-use App\Models\post;
+use App\Models\Post;
 use App\Models\PostContent;
 use App\Models\Tag;
 
