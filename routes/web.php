@@ -25,3 +25,11 @@ Route::get('/post/{tagID?}', [PostController::class,'index'])->name('post.index'
 Route::get('/post/get/{title}', [PostController::class,'show'])->name('post.show');
 Route::get('/contactUs', [ContactDetailController::class,'index'])->name('contactDetail.index');
 Route::post('/contactUs/create', [ContactDetailController::class,'create'])->name('contactDetail.create');
+Route::get('/cache', function() {
+    Artisan::call('cache:clear');
+    echo 'ok';
+});
+Route::get('/storage', function() {
+    Artisan::call('storage:link');
+    echo 'ok';
+});

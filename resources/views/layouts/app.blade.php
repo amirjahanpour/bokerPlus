@@ -7,7 +7,7 @@
     <meta name="description" content="Premium Bootstrap 5 Landing Page Template"/>
     <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern"/>
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}">
+    <link rel="shortcut icon" href="{{asset('asset/images/index/logo.png')}}">
     <!-- Bootstrap -->
     <link href="{{asset('asset/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Icons -->
@@ -25,8 +25,8 @@
         <!-- Logo container-->
         <div>
             <a class="logo" href="{{route('index')}}">
-                <img src="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}" class="l-dark" height="80" alt="">
-                <img src="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}" class="l-light" height="100" alt="">
+                <img src="{{asset('asset/images/index/logo.png')}}" class="l-dark" height="80" alt="">
+                <img src="{{asset('asset/images/index/logo.png')}}" class="l-light" height="100" alt="">
             </a>
         </div>
         <ul class="buy-button list-inline mb-0">

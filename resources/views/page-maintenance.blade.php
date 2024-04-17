@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Premium Bootstrap 5 Landing Page Template"/>
     <meta name="keywords" content="Saas, Software, multi-uses, HTML, Clean, Modern"/>
-    <link rel="shortcut icon" href="{{asset('asset/images/index/IMG_20230602_163909_037.png')}}">
+    <link rel="shortcut icon" href="{{asset('asset/images/index/logo.png')}}">
     <link href="{{asset('asset/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('asset/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{asset('asset/css/line.css')}}">

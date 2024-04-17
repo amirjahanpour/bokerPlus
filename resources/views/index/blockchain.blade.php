@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="bg-home d-flex align-items-center"
-             style="background: url({{asset('asset/images/crypto/image.jpg')}}) top;">
+             style="background: url({{asset('asset/images/index/slider.jpg')}}) ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">

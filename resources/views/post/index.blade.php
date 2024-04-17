@@ -42,7 +42,7 @@
                                         <div class="row align-items-center g-0">
                                             <div class="col-md-6">
                                                 <a href="{{route('post.show',['title' => $post->slugTitle])}}">
-                                                    <img src="{{ url('storage/'.$post->posterSID) }}" class="img-fluid" alt="">
+                                                    <img src="{{ asset('storage/'.$post->posterSID) }}" class="img-fluid" alt="">
                                                 </a>
                                             </div><!--end col-->
                                             <div class="col-md-6">
