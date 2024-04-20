@@ -232,47 +232,47 @@
         <h6 class="title text-center">رنگ خود را انتخاب کنید </h6>
         <ul class="pattern">
             <li class="list-inline-item">
-                <a class="color1" href="javascript: void(0);" onclick="setColor('default','{{url('/asset/css/')}}')"></a>
+                <a class="color1" href="javascript: void(0);" onclick="setColor('default','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color2" href="javascript: void(0);" onclick="setColor('green','{{url('/asset/css/')}}')"></a>
+                <a class="color2" href="javascript: void(0);" onclick="setColor('green','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color3" href="javascript: void(0);" onclick="setColor('purple','{{url('/asset/css/')}}')"></a>
+                <a class="color3" href="javascript: void(0);" onclick="setColor('purple','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color4" href="javascript: void(0);" onclick="setColor('red','{{url('/asset/css/')}}')"></a>
+                <a class="color4" href="javascript: void(0);" onclick="setColor('red','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color5" href="javascript: void(0);" onclick="setColor('skyblue','{{url('/asset/css/')}}')"></a>
+                <a class="color5" href="javascript: void(0);" onclick="setColor('skyblue','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color6" href="javascript: void(0);" onclick="setColor('skobleoff','{{url('/asset/css/')}}')"></a>
+                <a class="color6" href="javascript: void(0);" onclick="setColor('skobleoff','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color7" href="javascript: void(0);" onclick="setColor('cyan','{{url('/asset/css/')}}')"></a>
+                <a class="color7" href="javascript: void(0);" onclick="setColor('cyan','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color8" href="javascript: void(0);" onclick="setColor('slateblue','{{url('/asset/css/')}}')"></a>
+                <a class="color8" href="javascript: void(0);" onclick="setColor('slateblue','{{url('/public/asset/css/')}}')"></a>
             </li>
             <li class="list-inline-item">
-                <a class="color9" href="javascript: void(0);" onclick="setColor('yellow','{{url('/asset/css/')}}')"></a>
+                <a class="color9" href="javascript: void(0);" onclick="setColor('yellow','{{url('/public/asset/css/')}}')"></a>
             </li>
         </ul>
 
         <h6 class="title text-center pt-3 mb-0 border-top">تنظیمات قالب </h6>
         <ul class="text-center list-unstyled mb-0">
-            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style-rtl','{{url('/asset/css/')}}')"> </a></li>
-            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style','{{url('/asset/css/')}}')"> </a></li>
-            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style-dark-rtl','{{url('/asset/css/')}}')"> </a>
+            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style-rtl','{{url('/public/asset/css/')}}')"> </a></li>
+            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style','{{url('/public/asset/css/')}}')"> </a></li>
+            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style-dark-rtl','{{url('/public/asset/css/')}}')"> </a>
             </li>
-            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style-dark','{{url('/asset/css/')}}')"> </a></li>
+            <li class="d-grid"><a href="javascript:void(0)" class=" " onclick="setTheme('style-dark','{{url('/public/asset/css/')}}')"> </a></li>
             <li class="d-grid"><a href="javascript:void(0)"
                                   class="btn btn-sm btn-block btn-dark dark-version t-dark mt-2"
-                                  onclick="setTheme('style-dark','{{url('/asset/css/')}}')">تیره </a></li>
+                                  onclick="setTheme('style-dark','{{url('/public/asset/css/')}}')">تیره </a></li>
             <li class="d-grid"><a href="javascript:void(0)"
                                   class="btn btn-sm btn-block btn-dark light-version t-light mt-2"
-                                  onclick="setTheme('style','{{url('/asset/css/')}}')">روشن </a></li>
+                                  onclick="setTheme('style','{{url('/public/asset/css/')}}')">روشن </a></li>
         </ul>
     </div>
     <div class="bottom">
