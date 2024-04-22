@@ -14,10 +14,10 @@
                             با مجموعه بروکر پلاس درآمد دلاری داشته باشید و از نظر اقتصادی یک گام جلوتر از بقیه باشید. ما در این مسیر تا رسیدن شما به درآمد دلاری در کنارتان خواهیم ماند.
                         </h5>
                         <div class="subcribe-form mt-4 pt-2">
-                            <form method="POST" action="{{route('contactDetail.create')}}">
+                            <form method="POST" action="{{route('contactDetail.saveInfo')}}">
                                 @csrf
                                 <label for="message"></label>
-                                <input type="text" id="message" name="email" class="border bg-white rounded-pill"
+                                <input type="text" id="message" name="message" class="border bg-white rounded-pill"
                                        required placeholder="شماره همراه یا آیدی تلگرام">
                                 <button type="submit" class="btn btn-pills btn-primary">
                                     عضویت در کانال VIP
@@ -256,10 +256,10 @@
                             چیزهایی را که برای ایجاد آگاهی ، ایجاد ترافیک ، اتصال به آن نیاز دارید فراهم کند.</p>
                     </div>
                     <div class="subcribe-form mt-4">
-                        <form method="POST" action="{{route('contactDetail.create')}}">
+                        <form method="POST" action="{{route('contactDetail.saveInfo')}}">
                             @csrf
                             <div class="mb-2">
-                                <input type="email" id="message" name="message" class="rounded-pill" placeholder="ایمیل:">
+                                <input type="text" id="message" name="message" class="rounded-pill" placeholder="شماره همراه یا آیدی تلگرام">
                                 <button type="submit" class="btn btn-pills btn-primary">مشترک شدن</button>
                             </div>
                         </form>

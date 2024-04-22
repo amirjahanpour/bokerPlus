@@ -24,7 +24,12 @@ Route::get('/index', [Controller::class,'index'])->name('index');
 Route::get('/post/{tagID?}', [PostController::class,'index'])->name('post.index');
 Route::get('/post/get/{title}', [PostController::class,'show'])->name('post.show');
 Route::get('/contactUs', [ContactDetailController::class,'index'])->name('contactDetail.index');
-Route::post('/contactUs/create', [ContactDetailController::class,'create'])->name('contactDetail.create');
+
+Route::middleware('throttle:30,4')->prefix('contactUs')->group(function () {
+    Route::post('/create', [ContactDetailController::class,'create'])->name('contactDetail.create');
+    Route::post('/saveInfo', [ContactDetailController::class,'saveInfo'])->name('contactDetail.saveInfo');
+});
+
 Route::get('/cache', function() {
     Artisan::call('cache:clear');
     echo 'ok';
