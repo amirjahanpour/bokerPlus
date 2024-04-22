@@ -99,7 +99,11 @@ class PostResource extends Resource
                                     ->required()
                                     ->markAsRequired()
                                     ->downloadable()
-                                    ->translateLabel(),
+                                    ->translateLabel()
+                                    ->imageResizeMode('cover')
+                                    ->imageCropAspectRatio('16:9')
+                                    ->imageResizeTargetWidth('1920')
+                                    ->imageResizeTargetHeight('1080'),
                                 Textarea::make('description')
                                     ->autosize()
                                     ->markAsRequired()
@@ -123,7 +127,9 @@ class PostResource extends Resource
                                     ->output(TiptapOutput::Json)
                                     ->required()
                                     ->markAsRequired()
+                                    ->maxFileSize('3000')
                                     ->translateLabel()
+                                    ->maxWidth(2240)
                             ])
                     ])->columnSpanFull()
                     ->hidden(fn(?Post $record) => $record === null),

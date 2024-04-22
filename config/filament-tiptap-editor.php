@@ -64,11 +64,11 @@ return [
     'directory' => 'images',
     'visibility' => 'public',
     'preserve_file_names' => false,
-    'max_file_size' => 2042,
+    'max_file_size' => 3000,
     'image_resize_mode' => null,
     'image_crop_aspect_ratio' => null,
-    'image_resize_target_width' => null,
-    'image_resize_target_height' => null,
+    'image_resize_target_width' => 2240,
+    'image_resize_target_height' => 1260,
     'use_relative_paths' => true,
 
     /*
