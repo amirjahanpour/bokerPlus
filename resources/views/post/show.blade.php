@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
         <!-- start -->
-        <section class="bg-half d-table w-100" style="background: url({{ url('storage/'.$postContent->post->posterSID) }}) center center;">
+        <section class="bg-half d-table w-100" style="background: url({{ asset('storage/'.$postContent->post->posterSID) }}) center center;">
             <div class="bg-overlay"></div>
             <div class="container">
                 <div class="row justify-content-center">
