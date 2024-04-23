@@ -43,32 +43,32 @@
         <section class="section pb-0">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card border-0 text-center features feature-clean">
-                            <div class="icons text-primary text-center mx-auto">
-                                <i class="uil uil-phone d-block rounded h3 mb-0"></i>
-                            </div>
-                            <div class="content mt-3">
-                                <h5 class="fw-bold">تلفن </h5>
-                                <p class="text-muted">شماره تماس بروکر پلاس</p>
-                                <a href="tel:+152534-468-854" class="text-primary">+152 534-468-854</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
+{{--                    <div class="col-md-4">--}}
+{{--                        <div class="card border-0 text-center features feature-clean">--}}
+{{--                            <div class="icons text-primary text-center mx-auto">--}}
+{{--                                <i class="uil uil-phone d-block rounded h3 mb-0"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="content mt-3">--}}
+{{--                                <h5 class="fw-bold">تلفن </h5>--}}
+{{--                                <p class="text-muted">شماره تماس بروکر پلاس</p>--}}
+{{--                                <a href="tel:+152534-468-854" class="text-primary">+152 534-468-854</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div><!--end col-->--}}
 
-                    <div class="col-md-4 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                        <div class="card border-0 text-center features feature-clean">
-                            <div class="icons text-primary text-center mx-auto">
-                                <i class="uil uil-envelope d-block rounded h3 mb-0"></i>
-                            </div>
-                            <div class="content mt-3">
-                                <h5 class="fw-bold">ایمیل </h5>
-                                <p class="text-muted">ایمیل پشتیبانی بروکر پلاس</p>
-                                <a href="mailto:contact@example.com" class="text-primary">contact@example.com</a>
-                            </div>
-                        </div>
-                    </div><!--end col-->
-                    <div class="col-md-4 mt-4 mt-sm-0 pt-2 pt-sm-0">
+{{--                    <div class="col-md-4 mt-4 mt-sm-0 pt-2 pt-sm-0">--}}
+{{--                        <div class="card border-0 text-center features feature-clean">--}}
+{{--                            <div class="icons text-primary text-center mx-auto">--}}
+{{--                                <i class="uil uil-envelope d-block rounded h3 mb-0"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="content mt-3">--}}
+{{--                                <h5 class="fw-bold">ایمیل </h5>--}}
+{{--                                <p class="text-muted">ایمیل پشتیبانی بروکر پلاس</p>--}}
+{{--                                <a href="mailto:contact@example.com" class="text-primary">contact@example.com</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div><!--end col-->--}}
+                    <div class="col-md-12 mt-12 mt-sm-0 pt-2 pt-sm-0">
                         <div class="card border-0 text-center features feature-clean">
                             <div class="icons text-primary text-center mx-auto">
                                 <i class="uil uil-telegram d-block rounded h3 mb-0"></i>
@@ -76,7 +76,10 @@
                             <div class="content mt-3">
                                 <h5 class="fw-bold">تلگرام </h5>
                                     <p class="text-muted">پشتیبانی بروکر پلاس در تلگرام </p>
-                                    <a href="https://t.me/alparigroup_persian" data-type="iframe" class="video-play-icon text-primary lightbox">ارسال پیام به پشتیبانی</a>
+                                    <a href="https://t.me/alparigroup_persian" data-type="iframe" target="_blank"
+                                       class="video-play-icon text-primary lightbox">
+                                        ارسال پیام به پشتیبانی
+                                    </a>
                                 </div>
                             </div>
                         </div>

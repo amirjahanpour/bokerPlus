@@ -25,16 +25,16 @@
         <!-- Logo container-->
         <div>
             <a class="logo" href="{{route('index')}}">
-                <img src="{{asset('asset/images/index/logo.png')}}" class="l-dark" height="80" alt="">
-                <img src="{{asset('asset/images/index/logo.png')}}" class="l-light" height="100" alt="">
+                <img src="{{asset('asset/images/index/logo.png')}}" class="l-dark" height="80" alt="بروکر پلاس">
+                <img src="{{asset('asset/images/index/logo.png')}}" class="l-light" height="100" alt="بروکر پلاس">
             </a>
         </div>
         <ul class="buy-button list-inline mb-0">
             <li class="list-inline-item mb-0">
-                <a href="#" class="btn btn-icon btn-primary"><i class="uil uil-user icons"></i></a>
+                <a href="https://t.me/brokerplusgroup" class="btn btn-icon btn-primary" target="_blank"><i class="uil uil-user icons"></i></a>
             </li>
             <li class="list-inline-item mb-0">
-                <a href="#" class="btn btn-icon btn-primary"><i class="uil uil-twitter icons"></i></a>
+                <a href="#" class="btn btn-icon btn-primary" target="_blank"><i class="uil uil-telegram icons"></i></a>
             </li>
         </ul><!--end login button-->
         <!-- End Logo container-->
