@@ -32,5 +32,9 @@
   "Broker name": "نام بروکر",
   "Cabin number": "شماره کابین",
   "Message": "پیام",
-  "Thank you for reaching out. Your message has been received successfully. Our team will be in touch with you shortly.": "با تشکر از ارتباط شما. پیام شما با موفقیت دریافت شد. تیم ما به زودی با شما ارتباط خواهند گرفت."
+  "Thank you for reaching out. Your message has been received successfully. Our team will be in touch with you shortly.": "با تشکر از ارتباط شما. پیام شما با موفقیت دریافت شد. تیم ما به زودی با شما ارتباط خواهند گرفت.",
+  "draft": "پیش نویس",
+  "pendingReview": "بررسی در انتظار",
+  "published": "منتشر شده",
+  "trash": "زباله ها"
 }

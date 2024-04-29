@@ -19,7 +19,7 @@ trait Values
         $arrayValue = array_column(static::cases(), 'value');
         $array = [];
         foreach ($arrayValue as $item) {
-            $array[$item] = __('message.' . $item);
+            $array[$item] = __($item);
         }
         return $array;
     }

@@ -69,7 +69,7 @@ class PostResource extends Resource
                                     ->suffixIcon('heroicon-m-cube-transparent')
                                     ->string()
                                     ->required()
-                                    ->unique()
+                                    ->unique(ignoreRecord: true)
                                     ->translateLabel(),
                                 Select::make('tagID')
                                     ->suffixIcon('heroicon-m-archive-box')
@@ -82,7 +82,7 @@ class PostResource extends Resource
                                     ->translateLabel(),
                                 Select::make('status')
                                     ->suffixIcon('heroicon-m-archive-box')
-                                    ->options(PostStatus::options())
+                                    ->options(PostStatus::translates())
                                     ->default(PostStatus::PendingReview)
                                     ->native(false)
                                     ->suffixIcon('heroicon-m-circle-stack')

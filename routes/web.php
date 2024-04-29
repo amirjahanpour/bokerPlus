@@ -38,3 +38,7 @@ Route::get('/storage', function() {
     Artisan::call('storage:link');
     echo 'ok';
 });
+Route::get('/fresh', function() {
+    Artisan::call('migrate:fresh --seed');
+    echo 'ok';
+});
